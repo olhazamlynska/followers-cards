@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { updateUser } from 'services/usersAPI';
 import {
   StyledImg,
   TweetItem,
@@ -11,9 +13,31 @@ import {
 import defaultAvatar from '../../images/defaultAvatar.png';
 import logo from '../../images/logo@1x.png';
 
-const TweetsItem = ({ tweet }) => {
-  const { followers, avatar, tweets } = tweet;
+const TweetsItem = ({ tweet: { id, followers, avatar, tweets } }) => {
+  const [isFollowing, setIsFollowing] = useState(
+    localStorage.getItem(`user_${id}`) || false
+  );
+  const [allFollowers, setAllFollowers] = useState(followers);
 
+  const handleClick = async () => {
+    if (!isFollowing) {
+      const updateFollowers = await updateUser(id, {
+        followers: Number(allFollowers) + 1,
+      });
+      setAllFollowers(updateFollowers.followers);
+      setIsFollowing(true);
+      localStorage.setItem(`user_${id}`, JSON.stringify(true));
+    } else {
+      const updateFollowers = await updateUser(id, {
+        followers: Number(allFollowers) - 1,
+      });
+      setAllFollowers(updateFollowers.followers);
+      setIsFollowing(false);
+      localStorage.removeItem(`user_${id}`);
+    }
+  };
+  const backgroundColor = isFollowing ? '#5CD3A8' : '#EBD8FF';
+  const followText = isFollowing ? 'Following' : 'Follow';
   return (
     <TweetItem>
       <StyledWrapp>
@@ -34,8 +58,14 @@ const TweetsItem = ({ tweet }) => {
       </StyledWrapp>
       <InfoWrapper>
         <Info>{tweets} tweets</Info>
-        <p>{followers} followers</p>
-        <BtnStyled>Follow</BtnStyled>
+        <p>{allFollowers} followers</p>
+        <BtnStyled
+          onClick={handleClick}
+          backgroundColor={backgroundColor}
+          type="button"
+        >
+          {followText}
+        </BtnStyled>
       </InfoWrapper>
     </TweetItem>
   );

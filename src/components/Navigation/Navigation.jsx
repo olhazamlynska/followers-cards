@@ -1,4 +1,3 @@
-import Container from 'components/Container/Container';
 import { Link, Nav } from './Navigation.styled';
 
 const Navigation = () => {

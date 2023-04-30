@@ -5,6 +5,7 @@ export const Link = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
   padding: 5px 10px;
   margin-left: ${p => p.theme.space[3]}px;
   color: ${p => p.theme.colors.btnText};
@@ -25,4 +26,5 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: left;
   align-items: center;
+  height: 60px;
 `;

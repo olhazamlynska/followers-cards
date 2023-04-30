@@ -5,7 +5,9 @@ import Navigation from 'components/Navigation/Navigation';
 const Header = () => {
   return (
     <HeaderStyled>
-      <Navigation />
+      <Container sx={{ width: '100%' }}>
+        <Navigation />
+      </Container>
     </HeaderStyled>
   );
 };

@@ -6,3 +6,13 @@ export const getUsers = async (page = 1) => {
   const { data } = await axios.get(`/users?page=${page}&limit=3`);
   return data;
 };
+
+export const getUsersCount = async () => {
+  const { data } = await axios.get(`/users`);
+  return data.length;
+};
+
+export const updateUser = async (id, followers) => {
+  const { data } = await axios.put(`/users/${id}`, followers);
+  return data;
+};

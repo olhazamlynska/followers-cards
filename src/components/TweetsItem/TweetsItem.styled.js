@@ -126,7 +126,9 @@ export const BtnStyled = styled.button`
   font-weight: ${p => p.theme.fontWeights.bold};
   line-height: ${p => p.theme.lineHeights.main};
   color: ${p => p.theme.colors.btnText};
-  background: ${p => p.theme.colors.btnFollow};
+  background: ${p => p.backgroundColor};
+  border: none;
+  outline: none;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: ${p => p.theme.radii.normal};
   text-transform: uppercase;
@@ -142,6 +144,7 @@ export const BtnStyled = styled.button`
   }
 
   &:hover {
-    background: ${p => p.theme.colors.btnFollowing};
+    background: ${p =>
+      p.backgroundColor === '#5CD3A8' ? '#EBD8FF' : '#5CD3A8'};
   }
 `;

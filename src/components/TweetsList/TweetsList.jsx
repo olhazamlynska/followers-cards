@@ -1,5 +1,5 @@
 import TweetsItem from 'components/TweetsItem/TweetsItem';
-import { TweetsUl, ContentWrapp, BtnLoadMore } from './TweetsList.styled';
+import { TweetsUl, ContentWrapp } from './TweetsList.styled';
 
 const TweetsList = ({ tweets }) => {
   return (
@@ -9,7 +9,6 @@ const TweetsList = ({ tweets }) => {
           <TweetsItem key={`${tweet.id}-${idx}`} tweet={tweet} />
         ))}
       </TweetsUl>
-      <BtnLoadMore>Load more</BtnLoadMore>
     </ContentWrapp>
   );
 };

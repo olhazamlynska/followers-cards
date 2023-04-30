@@ -1,9 +1,13 @@
 import Container from 'components/Container/Container';
+import { StyledLink, StyledText } from './Home.styled';
 
 export default function Home() {
   return (
     <Container>
-      <h1>Welcome to TWEETS APP! </h1>
+      <StyledText>
+        Welcome to TWEETS APP! Click
+        <StyledLink to={'/tweets'}> HERE </StyledLink> to see tweets.
+      </StyledText>
     </Container>
   );
 }
