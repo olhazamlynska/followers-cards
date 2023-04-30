@@ -3,17 +3,20 @@ import GoBackBtm from 'components/GoBackBtm/GoBackBtm';
 import TweetsList from 'components/TweetsList/TweetsList';
 import { useEffect, useState } from 'react';
 import { getUsers, getUsersCount } from 'services/usersAPI';
-import { BtnLoadMore } from './Tweets.styled';
 import toast from 'react-hot-toast';
 import Loader from 'components/Loader/Loader';
+import FilterTweet from 'components/FilterTweets/FilterTweets';
+import { getVisibleTweets } from '../../helpers/getVisibleTweets';
+import { BtnLoadMore, StyledWrap } from './Tweets.styled';
 
 const Tweets = () => {
-  const [tweets, setTweets] = useState(
-    JSON.parse(localStorage.getItem('tweets')) || []
-  );
+  const [tweets, setTweets] = useState([]);
   const [page, setPage] = useState(1);
   const [totalUsersCount, setTotalUsersCount] = useState(
     localStorage.getItem('totalCountTweets') || null
+  );
+  const [filterValue, setFilterValue] = useState(
+    JSON.parse(localStorage.getItem('selected-option')) || 'showAll'
   );
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -59,15 +62,23 @@ const Tweets = () => {
     setPage(prevPage => prevPage + 1);
   };
 
+  const handleChange = event => {
+    setFilterValue(event.target.value);
+    localStorage.setItem(`selected-option`, JSON.stringify(event.target.value));
+  };
+
   const totalTweetsCondition = totalUsersCount - page * 3;
+  const getFinalUsers = getVisibleTweets(filterValue, tweets);
+
   return (
     <Container>
-      <GoBackBtm />
-      {error && <p>Something went wrong, try again!</p>}
-      {isLoading && <Loader />}
-      {tweets && (
+      <StyledWrap>
+        <GoBackBtm />
+        <FilterTweet filterValue={filterValue} handleChange={handleChange} />
+      </StyledWrap>
+      {tweets.length > 0 && !isLoading && (
         <TweetsList
-          tweets={tweets}
+          tweets={getFinalUsers}
           onClick={loadMore}
           totalUsersCount={totalUsersCount}
         />
@@ -77,6 +88,8 @@ const Tweets = () => {
           Load more
         </BtnLoadMore>
       )}
+      {error && <p>Something went wrong, try again!</p>}
+      {isLoading && <Loader />}
     </Container>
   );
 };

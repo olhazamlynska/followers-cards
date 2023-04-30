@@ -2,11 +2,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledText = styled.h1`
-  display: flex;
-  justify-content: center;
-
+  margin: 50px auto;
   text-align: center;
-  margin-top: 30px;
 `;
 export const StyledLink = styled(Link)`
   text-decoration: underline;

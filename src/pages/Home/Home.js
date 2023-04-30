@@ -6,7 +6,7 @@ export default function Home() {
     <Container>
       <StyledText>
         Welcome to TWEETS APP! Click
-        <StyledLink to={'/tweets'}> HERE </StyledLink> to see tweets.
+        <StyledLink to={'/tweets'}>HERE</StyledLink> to see tweets.
       </StyledText>
     </Container>
   );

@@ -9,7 +9,6 @@ export const BtnStyled = styled(NavLink)`
   white-space: nowrap;
   min-width: 113px;
   margin: ${p => p.theme.space[5]}px;
-  margin-right: auto;
   padding: 16px 32px;
   font-size: ${p => p.theme.fontSizes.s};
   font-weight: ${p => p.theme.fontWeights.bold};

@@ -88,6 +88,7 @@ export const AvatarWrapp = styled.div`
 export const StyledImg = styled.div`
   background-color: ${p => p.theme.colors.bg2};
   border-radius: ${p => p.theme.radii.round};
+  overflow: hidden;
 `;
 
 export const InfoWrapper = styled.div`
