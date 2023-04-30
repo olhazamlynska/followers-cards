@@ -60,7 +60,6 @@ const Tweets = () => {
   };
 
   const totalTweetsCondition = totalUsersCount - page * 3;
-
   return (
     <Container>
       <GoBackBtm />

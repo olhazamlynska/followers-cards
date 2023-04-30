@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { updateUser } from 'services/usersAPI';
 import {
   StyledImg,
@@ -13,10 +14,11 @@ import {
 import defaultAvatar from '../../images/defaultAvatar.png';
 import logo from '../../images/logo@1x.png';
 
-const TweetsItem = ({ tweet: { id, followers, avatar, tweets } }) => {
+const TweetsItem = ({ id, avatar, followers, tweets }) => {
   const [isFollowing, setIsFollowing] = useState(
     localStorage.getItem(`user_${id}`) || false
   );
+
   const [allFollowers, setAllFollowers] = useState(followers);
 
   const handleClick = async () => {
@@ -38,6 +40,7 @@ const TweetsItem = ({ tweet: { id, followers, avatar, tweets } }) => {
   };
   const backgroundColor = isFollowing ? '#5CD3A8' : '#EBD8FF';
   const followText = isFollowing ? 'Following' : 'Follow';
+
   return (
     <TweetItem>
       <StyledWrapp>
@@ -58,7 +61,12 @@ const TweetsItem = ({ tweet: { id, followers, avatar, tweets } }) => {
       </StyledWrapp>
       <InfoWrapper>
         <Info>{tweets} tweets</Info>
-        <p>{allFollowers} followers</p>
+        <p>
+          {allFollowers
+            ? allFollowers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            : allFollowers}{' '}
+          followers
+        </p>
         <BtnStyled
           onClick={handleClick}
           backgroundColor={backgroundColor}
@@ -70,4 +78,5 @@ const TweetsItem = ({ tweet: { id, followers, avatar, tweets } }) => {
     </TweetItem>
   );
 };
+
 export default TweetsItem;
