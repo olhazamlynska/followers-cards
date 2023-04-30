@@ -1,14 +1,17 @@
-import Home from 'pages/Home/Home';
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from './SharedLayout/SharedLayout';
-import Tweets from 'pages/Tweets/Tweets';
+
+const HomePage = lazy(() => import('../pages/Home'));
+const TweetsPage = lazy(() => import('../pages/Tweets'));
 
 export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Home />} />
-        <Route path="/tweets" element={<Tweets />} />
+        <Route index element={<HomePage />} />
+        <Route path="/tweets" element={<TweetsPage />} />
+        <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>
   );
