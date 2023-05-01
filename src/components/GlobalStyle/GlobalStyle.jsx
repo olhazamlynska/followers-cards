@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import 'modern-normalize/modern-normalize.css';
+
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;

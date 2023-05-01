@@ -7,7 +7,7 @@ export const StyledText = styled.h1`
 `;
 export const StyledLink = styled(Link)`
   text-decoration: underline;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: ${p => p.theme.space[3]}px;
+  margin-right: ${p => p.theme.space[3]}px;
   color: ${p => p.theme.colors.bg2};
 `;

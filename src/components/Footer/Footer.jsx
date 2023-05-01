@@ -1,6 +1,7 @@
 import Container from 'components/Container/Container';
 import logo from '../../images/logo@1x.png';
 import { StyledFotter, StyledText } from './Footer.styled';
+
 const Footer = () => {
   return (
     <Container>

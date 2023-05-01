@@ -1,12 +1,13 @@
+import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
+
+import { getUsers, getUsersCount } from 'services/usersAPI';
+import { getVisibleTweets } from 'helpers/getVisibleTweets';
+import Loader from 'components/Loader/Loader';
 import Container from 'components/Container/Container';
 import GoBackBtm from 'components/GoBackBtm/GoBackBtm';
 import TweetsList from 'components/TweetsList/TweetsList';
-import { useEffect, useState } from 'react';
-import { getUsers, getUsersCount } from 'services/usersAPI';
-import toast from 'react-hot-toast';
-import Loader from 'components/Loader/Loader';
 import FilterTweet from 'components/FilterTweets/FilterTweets';
-import { getVisibleTweets } from '../../helpers/getVisibleTweets';
 import { BtnLoadMore, StyledWrap } from './Tweets.styled';
 
 const Tweets = () => {
@@ -49,7 +50,7 @@ const Tweets = () => {
         localStorage.setItem('totalCountTweets', JSON.stringify(count));
       } catch (error) {
         setError(true);
-        console.log(error.message);
+        toast.error('Someting went wrong try again...');
       } finally {
         setIsLoading(false);
       }
@@ -67,29 +68,28 @@ const Tweets = () => {
     localStorage.setItem(`selected-option`, JSON.stringify(event.target.value));
   };
 
-  const totalTweetsCondition = totalUsersCount - page * 3;
+  const totalTweetsCondition = totalUsersCount - page * 6;
   const getFinalUsers = getVisibleTweets(filterValue, tweets);
 
   return (
     <Container>
+      {error && <p>Something went wrong, try again!</p>}
+      {isLoading && <Loader />}
       <StyledWrap>
         <GoBackBtm />
         <FilterTweet filterValue={filterValue} handleChange={handleChange} />
       </StyledWrap>
-      {tweets.length > 0 && !isLoading && (
-        <TweetsList
-          tweets={getFinalUsers}
-          onClick={loadMore}
-          totalUsersCount={totalUsersCount}
-        />
+      {getFinalUsers.length > 0 && !isLoading && !error && (
+        <TweetsList tweets={getFinalUsers} />
       )}
-      {tweets.length > 0 && totalTweetsCondition > 0 && (
-        <BtnLoadMore onClick={loadMore} type="button">
-          Load more
-        </BtnLoadMore>
-      )}
-      {error && <p>Something went wrong, try again!</p>}
-      {isLoading && <Loader />}
+      {tweets.length > 0 &&
+        totalTweetsCondition > 0 &&
+        !error &&
+        !isLoading && (
+          <BtnLoadMore onClick={loadMore} type="button">
+            Load more
+          </BtnLoadMore>
+        )}
     </Container>
   );
 };

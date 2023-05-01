@@ -30,6 +30,7 @@ export const theme = {
     main: 1.22,
   },
   borders: {
+    none: 'none',
     normal: '1px solid #757575',
   },
   radii: {

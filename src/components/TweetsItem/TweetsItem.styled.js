@@ -105,7 +105,7 @@ export const InfoWrapper = styled.div`
   font-size: ${p => p.theme.fontSizes.s};
   line-height: ${p => p.theme.lineHeights.main};
   text-transform: uppercase;
-  padding-top: 32px;
+  padding-top: ${p => p.theme.space[5]}px;
   color: ${p => p.theme.colors.mainText};
   @media screen and (min-width: ${p => p.theme.breakpoints[1]}) {
     font-size: ${p => p.theme.fontSizes.m};
@@ -118,9 +118,10 @@ export const InfoWrapper = styled.div`
 `;
 
 export const Info = styled.p`
-  margin-bottom: 8px;
+  margin-bottom: ${p => p.theme.space[3]}px;
+
   @media screen and (min-width: ${p => p.theme.breakpoints[2]}) {
-    margin-bottom: 16px;
+    margin-bottom: ${p => p.theme.space[4]}px;
   }
 `;
 
@@ -134,7 +135,7 @@ export const BtnStyled = styled.button`
   line-height: ${p => p.theme.lineHeights.main};
   color: ${p => p.theme.colors.btnText};
   background: ${p => p.backgroundColor};
-  border: none;
+  border: ${p => p.theme.borders.none};
   outline: none;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: ${p => p.theme.radii.normal};

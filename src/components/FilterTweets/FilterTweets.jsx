@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { SelectStyled } from './FilterTweets.styled';
 
 const FilterTweet = ({ filterValue, handleChange }) => {
@@ -11,3 +12,8 @@ const FilterTweet = ({ filterValue, handleChange }) => {
 };
 
 export default FilterTweet;
+
+FilterTweet.propTypes = {
+  filterValue: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};

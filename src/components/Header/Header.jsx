@@ -1,11 +1,11 @@
 import Container from 'components/Container/Container';
-import { HeaderStyled } from './Header.styled';
 import Navigation from 'components/Navigation/Navigation';
+import { HeaderStyled } from './Header.styled';
 
 const Header = () => {
   return (
     <HeaderStyled>
-      <Container sx={{ width: '100%' }}>
+      <Container>
         <Navigation />
       </Container>
     </HeaderStyled>
