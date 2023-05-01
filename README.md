@@ -1,15 +1,16 @@
-Привіт! 👋
+Hello! 👋
 
-Це застоcунок для перегляду статичної інформації про твіти користувачів та
-можливості слідкувати за користувачами🚀
+This is a plugin for viewing static information about user tweets and ability to
+follow users 🚀
 
-Застосунок стилізований та адаптивний для зручної роботи з ним.
+The application is stylized and adaptive for convenient use.
 
-Для роботи з застосунком було використовуєть персональний бекенд для розробки за
-допомогою UI-сервісу mockapi.io.
+To work with the application i used a personal backend Mockapi.io UI service 😎
 
-Для роботи з проектом Ж
+To work with the project:
 
-1. Встанови базові залежності проекту командою `npm install`.
-2. Запусти режим розробки, виконавши команду `npm start`.
-3. Перейдіть до браузера за адресою
+1. Install the project's basic dependencies using the `npm install' command.
+2. Start the development mode by executing the `npm start` command.
+3. Go to the browser at the address
+4. Or just click my link [TweetsAPP](https://olhazamlynska.github.io/goit-test/)
+   👍
