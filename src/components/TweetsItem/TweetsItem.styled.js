@@ -41,9 +41,8 @@ export const TweetItem = styled.li`
 export const StyledWrapp = styled.div`
   height: 167px;
   border-bottom: 8px solid #ebd8ff;
-
   @media screen and (min-width: ${p => p.theme.breakpoints[2]}) {
-    height: 214px;
+    height: 222px;
   }
   &::after {
     content: '';
@@ -57,13 +56,20 @@ export const StyledWrapp = styled.div`
       inset 0px 3.43693px 2.5777px #fbf8ff;
 
     @media screen and (min-width: ${p => p.theme.breakpoints[2]}) {
-      top: 206px;
+      top: 214px;
     }
   }
 `;
 
-export const StyledLogo = styled.img`
-  padding: 20px;
+export const StyledLogo = styled.div`
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 76px;
+  height: 22px;
+`;
+
+export const StyledLogoLink = styled.a`
+  width: 100%;
 `;
 export const AvatarWrapp = styled.div`
   position: absolute;
@@ -106,7 +112,7 @@ export const InfoWrapper = styled.div`
   }
   @media screen and (min-width: ${p => p.theme.breakpoints[2]}) {
     font-size: ${p => p.theme.fontSizes.l};
-    height: 246px;
+    height: 238px;
     padding-top: 62px;
   }
 `;

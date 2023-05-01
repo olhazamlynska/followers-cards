@@ -10,6 +10,7 @@ import {
   InfoWrapper,
   Info,
   BtnStyled,
+  StyledLogoLink,
 } from './TweetsItem.styled';
 import defaultAvatar from '../../images/defaultAvatar.png';
 import logo from '../../images/logo@1x.png';
@@ -44,10 +45,11 @@ const TweetsItem = ({ id, avatar, followers, tweets }) => {
   return (
     <TweetItem>
       <StyledWrapp>
-        <a href="https://m.goit.global/ua/">
-          <StyledLogo src={logo} alt="Logo" width="76" height="22" />
-        </a>
-
+        <StyledLogo>
+          <StyledLogoLink href="https://m.goit.global/ua/">
+            <img src={logo} alt="Logo" width="76" height="22" />
+          </StyledLogoLink>
+        </StyledLogo>
         <AvatarWrapp>
           <StyledImg>
             <img
@@ -62,9 +64,7 @@ const TweetsItem = ({ id, avatar, followers, tweets }) => {
       <InfoWrapper>
         <Info>{tweets} tweets</Info>
         <p>
-          {allFollowers
-            ? allFollowers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-            : allFollowers}{' '}
+          {allFollowers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
           followers
         </p>
         <BtnStyled

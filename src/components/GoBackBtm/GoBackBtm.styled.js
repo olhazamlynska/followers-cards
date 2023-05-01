@@ -6,6 +6,7 @@ export const BtnStyled = styled(NavLink)`
   align-items: center;
   justify-content: center;
   width: fit-content;
+  height: 51px;
   white-space: nowrap;
   min-width: 113px;
   margin: ${p => p.theme.space[5]}px;
@@ -28,10 +29,12 @@ export const BtnStyled = styled(NavLink)`
   @media screen and (min-width: ${p => p.theme.breakpoints[1]}) {
     padding: 18px 52px;
     width: 130px;
+    height: 55px;
   }
   @media screen and (min-width: ${p => p.theme.breakpoints[2]}) {
     font-size: 16px;
     padding: 23px 52px;
     width: 160px;
+    height: 65px;
   }
 `;

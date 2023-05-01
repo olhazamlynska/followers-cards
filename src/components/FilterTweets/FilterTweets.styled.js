@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SelectStyled = styled.select`
   min-width: 113px;
-  height: 65px;
+  height: 51px;
   margin-left: ${p => p.theme.space[5]}px;
   margin-bottom: ${p => p.theme.space[5]}px;
   margin-top: ${p => p.theme.space[5]}px;
@@ -19,11 +19,12 @@ export const SelectStyled = styled.select`
   cursor: pointer;
   @media screen and (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 130px;
+    height: 55px;
   }
   @media screen and (min-width: ${p => p.theme.breakpoints[2]}) {
     font-size: 16px;
-
     width: 160px;
+    height: 65px;
   }
   option {
     color: ${p => p.theme.colors.bg};
