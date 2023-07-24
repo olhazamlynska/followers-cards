@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <BrowserRouter basename="/goit-test">
+    <BrowserRouter basename="/followers-cards">
       <App />
     </BrowserRouter>
   </ThemeProvider>

@@ -12,5 +12,5 @@ To work with the project:
 1. Install the project's basic dependencies using the `npm install' command.
 2. Start the development mode by executing the `npm start` command.
 3. Go to the browser at the address
-4. Or just click my link [TweetsAPP](https://olhazamlynska.github.io/goit-test/)
-   👍
+4. Or just click my link
+   [TweetsAPP](https://olhazamlynska.github.io/followers-cards/) 👍
