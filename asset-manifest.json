@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/goit-test/static/css/main.c3d5249d.css",
-    "main.js": "/goit-test/static/js/main.810fb789.js",
-    "static/js/344.ac27774f.chunk.js": "/goit-test/static/js/344.ac27774f.chunk.js",
-    "static/js/114.0106009a.chunk.js": "/goit-test/static/js/114.0106009a.chunk.js",
-    "static/js/279.2c004ea1.chunk.js": "/goit-test/static/js/279.2c004ea1.chunk.js",
-    "static/media/bg@2x.png": "/goit-test/static/media/bg@2x.3659c4c9186d8cc1533b.png",
-    "index.html": "/goit-test/index.html",
-    "main.c3d5249d.css.map": "/goit-test/static/css/main.c3d5249d.css.map",
-    "main.810fb789.js.map": "/goit-test/static/js/main.810fb789.js.map",
-    "344.ac27774f.chunk.js.map": "/goit-test/static/js/344.ac27774f.chunk.js.map",
-    "114.0106009a.chunk.js.map": "/goit-test/static/js/114.0106009a.chunk.js.map",
-    "279.2c004ea1.chunk.js.map": "/goit-test/static/js/279.2c004ea1.chunk.js.map"
+    "main.css": "/followers-cards/static/css/main.c3d5249d.css",
+    "main.js": "/followers-cards/static/js/main.b2668094.js",
+    "static/js/344.13d465c4.chunk.js": "/followers-cards/static/js/344.13d465c4.chunk.js",
+    "static/js/114.0867b459.chunk.js": "/followers-cards/static/js/114.0867b459.chunk.js",
+    "static/js/279.cc75f8ce.chunk.js": "/followers-cards/static/js/279.cc75f8ce.chunk.js",
+    "static/media/bg@2x.png": "/followers-cards/static/media/bg@2x.3659c4c9186d8cc1533b.png",
+    "index.html": "/followers-cards/index.html",
+    "main.c3d5249d.css.map": "/followers-cards/static/css/main.c3d5249d.css.map",
+    "main.b2668094.js.map": "/followers-cards/static/js/main.b2668094.js.map",
+    "344.13d465c4.chunk.js.map": "/followers-cards/static/js/344.13d465c4.chunk.js.map",
+    "114.0867b459.chunk.js.map": "/followers-cards/static/js/114.0867b459.chunk.js.map",
+    "279.cc75f8ce.chunk.js.map": "/followers-cards/static/js/279.cc75f8ce.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.810fb789.js"
+    "static/js/main.b2668094.js"
   ]
 }
